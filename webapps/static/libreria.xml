@@ -1,0 +1,91 @@
+<libreria>
+    <pais identificador="T8"> Reino Unido</pais>
+    <pais identificador="5L"> Estados Unidos</pais>
+    <pais identificador="10E">España</pais>
+    <pais identificador="9">Singapur</pais>
+    <pais identificador="2">Australia</pais>
+    <pais identificador="4"> Italia</pais>
+    <pais identificador="3">Suiza</pais>
+    <pais identificador="6"> Francia</pais>
+    <pais identificador="7"> Japón</pais>
+    <pais identificador="1">Noruega</pais>
+    <autor identificador="6" nacimiento="1881" pais="10">Juan Ramón Jiménez</autor>
+    <autor identificador="311" nacimiento="1925" pais="7">Yukio Mishima</autor>
+    <autor identificador="29" nacimiento="1799" pais="6">Honoré de Balzac</autor>
+    <autor identificador="53" nacimiento="1313" pais="4">Giovanni Boccaccio</autor>
+    <autor identificador="2H1" nacimiento="1265" pais="4">Dante Alighieri</autor>
+    <autor identificador="1" nacimiento="1547" pais="10E">Miguel de Cervantes</autor>
+    <autor identificador="9" nacimiento="1920" pais="10E">Miguel Delibes</autor>
+    <autor identificador="32" nacimiento="1304" pais="4">Francesco Petrarca</autor>
+    <autor identificador="5934" nacimiento="1935" pais="7">Kenzaburo Oe</autor>
+    <autor identificador="4" nacimiento="1580" pais="10E">Francisco de Quevedo</autor>
+    <autor identificador="355" nacimiento="1871" pais="6">Marcel Proust</autor>
+    <autor identificador="15" nacimiento="1802" pais="6">Victor Hugo</autor>
+    <autor identificador="2" nacimiento="1898" pais="10E">Federico García Lorca</autor>
+    <autor identificador="871" nacimiento="1886" pais="7">Junichiro Tanizaki</autor>
+    <autor identificador="66" nacimiento="1898" pais="T8">C.S. Lewis</autor>
+    <autor identificador="99" nacimiento="1909" pais="7">Osamu Dazai</autor>
+    <autor identificador="9E4" nacimiento="1907" pais="4">Alberto Moravia</autor>
+    <autor identificador="401" nacimiento="1802" pais="6">Alexandre Dumas</autor>
+    <autor identificador="5" nacimiento="1843" pais="10E">Benito Pérez Galdós</autor>
+    <autor identificador="3" nacimiento="1836" pais="10E">Gustavo Adolfo Bécquer</autor>
+    <autor identificador="10" nacimiento="1864" pais="10E">Miguel de Unamuno</autor>
+    <autor identificador="499" nacimiento="1949" pais="7">Haruki Murakami</autor>
+    <autor identificador="8I" nacimiento="1837" pais="10E">Rosalía de Castro</autor>
+    <autor identificador="653" nacimiento="1965" pais="T8">J.K. Rowling</autor>
+    <autor identificador="135" nacimiento="1890" pais="T8">Agatha Christie</autor>
+    <autor identificador="7" nacimiento="1562" pais="10E">Lope de Vega</autor>
+    <autor identificador="1K15" nacimiento="1821" pais="6">Gustave Flaubert</autor>
+    <autor identificador="771" nacimiento="1564" pais="T8">William Shakespeare</autor>
+    <autor identificador="992" nacimiento="1903" pais="T8">George Orwell</autor>
+    <autor identificador="23E4" nacimiento="1892" pais="T8">J.R.R. Tolkien</autor>
+    <libro identificador="33322" ISBN=" mártir&quot;" autor="9788423100392" disponible="10">"San
+        Manuel Bueno</libro>
+    <libro identificador="6H63" ISBN="9788483101711" autor="499" disponible="yes">Crónica del pájaro
+        que da cuerda al mundo</libro>
+    <libro identificador="3563" ISBN="9713427900792" autor="4" disponible="yes">La hora de todos</libro>
+    <libro identificador="4535" ISBN=" 9783427900792" autor="10" disponible="yes">Abel Sánchez</libro>
+    <libro identificador="3A34" ISBN="9788413374314" autor="401" disponible="no">El Vizconde de
+        Bragelonne</libro>
+    <libro identificador="675435" ISBN="9780451521342" autor="992" disponible="yes">Que no muera la
+        aspidistra</libro>
+    <libro identificador="64353" ISBN="9780451526348" autor="992" disponible="yes">Homenaje a
+        Cataluña</libro>
+    <libro identificador="104" ISBN="9781427900792" autor="4" disponible="no">Los baños de Argel</libro>
+    <libro identificador="453E6741" ISBN="9781443434973" autor="992" disponible="yes">1984</libro>
+    <libro identificador="333" ISBN="9780141012261" autor="771" disponible="yes">Romeo y Julieta</libro>
+    <libro identificador="2342" ISBN="9780451526342" autor="992" disponible="no">Rebelión en la
+        granja</libro>
+    <libro identificador="I4564" ISBN="9780451526342" autor="992" disponible="no">Sin blanca en
+        París y Londres</libro>
+    <libro identificador="4123" ISBN="9783368006662" autor="10" disponible="no">Del Sentimiento
+        Trágico de la Vida</libro>
+    <libro identificador="63" ISBN="9781542377021" autor="401" disponible="yes">Veinte Años Después</libro>
+    <libro identificador="114" ISBN="9780199535866" autor="771" disponible="no">Sueño de una noche
+        de verano</libro>
+    <libro identificador="987" ISBN="9788467060508" autor=" 4" disponible="yes"> Parnaso español</libro>
+    <libro identificador="7U85" ISBN=" mi amor&quot;" autor="9788483102169" disponible="499">
+        "Sputnik</libro>
+    <libro identificador="982" ISBN="9788483832967" autor="499" disponible="no">1Q84</libro>
+    <libro identificador="671" ISBN="9788483835241" autor="499" disponible="yes">Kafka en la orilla</libro>
+    <libro identificador="25" ISBN="9781475022001" autor="401" disponible="yes">El Hombre de la
+        Máscara de Hierro</libro>
+    <libro identificador="599" ISBN="9780199535873" autor="771" disponible="yes">Otelo</libro>
+    <libro identificador="78E2" ISBN="9780199535835" autor="771" disponible="no">Macbeth</libro>
+    <libro identificador="881" ISBN="9783427900712" autor="4" disponible="yes"> El Buscón</libro>
+    <libro identificador="993" ISBN="9788496875227" autor=" 4" disponible="no"> Vida de Marco Bruto</libro>
+    <libro identificador="872" ISBN="9183427900792" autor="4" disponible="no">Sueños y discursos</libro>
+    <libro identificador="E41" ISBN="9780141013077" autor="771" disponible="yes">Hamlet</libro>
+    <libro identificador="7561" ISBN="9788423900992" autor="10" disponible="yes">Niebla</libro>
+    <libro identificador="754563" ISBN=" 9188413910992" autor="10" disponible="yes">La tía Tula</libro>
+    <libro identificador="7354" ISBN=" al oeste del sol" autor="9788483102503" disponible="499">Al
+        sur de la frontera</libro>
+    <libro identificador="4G1" ISBN="9788418395574" autor="401" disponible="yes">El Conde de
+        Montecristo</libro>
+    <libro identificador="672" ISBN="9788437610078" autor=" 4" disponible="no"> Los Sueños</libro>
+    <libro identificador="7785" ISBN="9783117900792" autor="4" disponible="yes">La cuna y la
+        sepultura</libro>
+    <libro identificador="1L" ISBN="9788467024210" autor=" 4" disponible="yes"> Historia de la vida
+        del Buscón</libro>
+    <libro identificador="72" ISBN="9788413626727" autor="401" disponible="no">Los Tres Mosqueteros</libro>
+</libreria>

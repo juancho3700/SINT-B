@@ -45,7 +45,7 @@ public class DataModel {
         NodeList nlDoc;
         Element element;
 
-        ArrayList <String> datosClase = new ArrayList <String >();
+        String nombre, id, fechaNacimiento, idPais, isbn, disponible;
 
         doc = db.parse (new InputSource (new FileInputStream (new File (xmlDoc))));
         doc.getDocumentElement ().normalize ();
@@ -54,50 +54,53 @@ public class DataModel {
 
         for (int i = 0; i < nlDoc.getLength (); i++) {
 
-            datosClase.clear ();
             element = (Element) nlDoc.item (i);
 
-            datosClase.add (element.getAttribute ("identificador").trim ());
-            datosClase.add (element.getTextContent ().trim ());
+            id = element.getAttribute ("identificador").trim ();
+            nombre = element.getTextContent ().trim ();
 
-            paises.add (new Country (datosClase.get (1), datosClase.get (0)));
+            paises.add (new Country (nombre, id));
         }
 
         nlDoc = doc.getElementsByTagName ("autor");
 
         for (int i = 0; i < nlDoc.getLength (); i++) {
 
-            datosClase.clear ();
             element = (Element) nlDoc.item (i);
 
-            datosClase.add (element.getAttribute ("identificador").trim ());
-            datosClase.add (element.getAttribute ("nacimiento").trim ());
-            datosClase.add (element.getAttribute ("pais").trim ());
-            datosClase.add (element.getTextContent ().trim ());
+            id = element.getAttribute ("identificador").trim ();
+            fechaNacimiento = element.getAttribute ("nacimiento").trim ();
+            idPais = element.getAttribute ("pais").trim ();
+            nombre = element.getTextContent ().trim ();
 
-            autores.add (new Author (datosClase.get (3), datosClase.get (0), datosClase.get (1), datosClase.get (2)));
+            autores.add (new Author (nombre, id, fechaNacimiento, idPais));
         }
 
         nlDoc = doc.getElementsByTagName ("libro");
 
         for (int i = 0; i < nlDoc.getLength (); i++) {
 
-            datosClase.clear ();
             element = (Element) nlDoc.item (i);
 
-            datosClase.add (element.getAttribute ("identificador").trim ());
-            datosClase.add (element.getAttribute ("ISBN").trim ());
-            datosClase.add (element.getAttribute ("autor").trim ());
-            datosClase.add (element.getTextContent ().replaceAll ("\\s+", " ").trim ());
+            id = element.getAttribute ("identificador").trim ();
+            isbn = element.getAttribute ("ISBN").trim ();
+            idPais = element.getAttribute ("autor").trim ();
+            nombre = element.getTextContent ().replaceAll ("\\s+", " ").trim ();
 
-            libros.add (new Book (datosClase.get (3), datosClase.get (0), datosClase.get (1), datosClase.get (2)));
+            libros.add (new Book (nombre, id, idPais, isbn));
 
             try {
-                datosClase.add (element.getAttribute ("disponible").trim ());
-                libros.get (libros.size () - 1).setDisponible (datosClase.get (4));
+                disponible = element.getAttribute ("disponible").trim ();
+                libros.get (libros.size () - 1).setDisponible (disponible);
 
-            } catch (Exception e) {}
+            } catch (Exception e) {
+
+                libros.get (libros.size () - 1).setDisponible ("No");
+
+            }
         }
+
+        System.out.println("\n\n\n");
     }
 
 
@@ -135,8 +138,6 @@ public class DataModel {
 
     public ArrayList <Country> getCountries () {
 
-        System.out.println ("Printeo los paises");
-        System.out.println (paises);
         return paises;
     }
 
@@ -180,5 +181,30 @@ public class DataModel {
         }
 
         return (new Book ("", "", "", ""));
+    }
+
+
+    public void printAll () {
+
+        System.out.println ("\n----- PAISES -----\n");
+
+        for (Country pais : paises) {
+
+            System.out.println (pais.getNombre () + " - " + pais.getId ());
+        }
+
+        System.out.println ("\n\n----- AUTORES -----");
+
+        for (Author autor : autores) {
+
+            System.out.println (autor.getNombre () + " (" + autor.getId () + "): Nacido en " + autor.getFechaNacimiento () + ", " + autor.getIdPais ());
+        }
+
+        System.out.println ("\n\n----- LIBROS -----");
+
+        for (Book libro : libros) {
+
+            System.out.println (libro.getNombre () + " (" + libro.getId () + "): Escrito por " + libro.getIdAutor () + ", " + libro.getisbn ());
+        }
     }
 }

@@ -4,7 +4,7 @@ public class Author {
 
     private String id, idPais, nombre, fechaNacimiento;
 
-    public Author(String nombre, String id, String fechaNacimiento, String idPais) {
+    public Author (String nombre, String id, String fechaNacimiento, String idPais) {
 
         this.nombre = nombre;
         this.id = id;
@@ -12,27 +12,27 @@ public class Author {
         this.idPais = idPais;
     }
 
-    public String getNombre() {
+    public String getNombre () {
 
         return nombre;
     }
 
-    public String getId() {
+    public String getId () {
 
         return id;
     }
 
-    public String getFechaNacimiento() {
+    public String getFechaNacimiento () {
 
         return fechaNacimiento;
     }
 
-    public String getIdPais() {
+    public String getIdPais () {
 
         return idPais;
     }
 
-    public String toString() {
+    public String toString () {
 
         return "Nacido en " + fechaNacimiento;
     }

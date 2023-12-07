@@ -26,26 +26,21 @@ public class Sint62P2 extends HttpServlet {
         }
     }
 
-
+    
     public void doGet (HttpServletRequest req, HttpServletResponse res) {
-
+        
         int fase;
-        String ipClient, ipServer, browser;
         PrintWriter printWriter;
 
         try {
-            
-            ipClient = req.getRemoteAddr ();
-            ipServer = req.getLocalAddr ();
-            browser = req.getHeader ("User-Agent");
             printWriter = res.getWriter ();
 
         } catch (Exception e) {
-
+            
             e.printStackTrace ();
             return;
         }
-
+        
         try {
 
             fase = Integer.parseInt (req.getParameter ("fase"));
@@ -54,14 +49,12 @@ public class Sint62P2 extends HttpServlet {
     
                 case 1:
     
-                    System.out.println ("Fase1");
                     frontend.fase1 (printWriter, dataModel.getCountries ());
                     return;
     
     
                 case 2:
                 
-                    System.out.println ("Fase2");
                     String pais = req.getParameter ("pais");
                     frontend.fase2 (printWriter, dataModel.getCountry (pais), dataModel.getAuthors (pais));
                     return;
@@ -69,7 +62,6 @@ public class Sint62P2 extends HttpServlet {
     
                 case 3:
                 
-                    System.out.println ("Fase3");
                     Author autor = dataModel.getAuthor (req.getParameter ("autor"));
                     frontend.fase3 (printWriter, dataModel.getCountry (autor.getIdPais ()), autor, dataModel.getBooks (autor.getId ()));
                     return;
@@ -78,6 +70,10 @@ public class Sint62P2 extends HttpServlet {
         } catch (Exception e) {
 
             try {
+
+                String ipClient = req.getRemoteAddr ();
+                String ipServer = req.getLocalAddr ();
+                String browser = req.getHeader ("User-Agent");
                 
                 frontend.fase0 (printWriter, ipClient, xmlDoc, browser, ipServer);
                 

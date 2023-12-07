@@ -49,7 +49,7 @@ public class FrontEnd {
 
         for (Country pais : paises) {
 
-            out.println ("<li><a href='fase=2&pais=" + pais.getId () + "''>" + pais.getNombre () + "</a></li>");
+            out.println ("<li><a href='?fase=2&pais=" + pais.getId () + "''>" + pais.getNombre () + "</a></li>");
         }
 
         out.println ("<br>");
@@ -79,7 +79,7 @@ public class FrontEnd {
 
         for (Author autor : autores) {
 
-            out.println ("<li><a href='fase=2&autor=" + autor.getId () + "'>" + autor.getNombre () + "</a> Nacido en " + autor.getFechaNacimiento () + "</li>");
+            out.println ("<li><a href='?fase=3&autor=" + autor.getId () + "'>" + autor.getNombre () + "</a> Nacido en " + autor.getFechaNacimiento () + "</li>");
         }
 
         out.println ("<br>");
@@ -104,20 +104,21 @@ public class FrontEnd {
         out.println ("<h1> ----- SERVICIO DE CONSULTA DE LIBROS ----- </h1>");
         out.println ("<h1> -------------------------------------------------------------- </h1>");
  
-        out.println ("<h2>Fase 2</h2>");
+        out.println ("<h2>Fase 3</h2>");
         out.println ("<h4>Consultando información del país: " + pais.getNombre () + "</h4>");
         out.println ("<h4>Consultando información de autor: " + autor.getNombre () + "</h4>");
 
         for (Book libro : libros) {
 
+            
             if (libro.getDisponible ()) {
-
-                out.println ("<li><a href=''>" + autor.getNombre () + "</a> ISBN: " + libro.getisbn () + "</li>");
+                
+                out.println ("<li><a href='' style='color: blue;'>" + libro.getNombre () + "</a> ISBN: " + libro.getisbn () + "</li>");
 
             } else {
 
-                out.println ("<li><a href='' style='color: red;'>" + autor.getNombre () + "</a> " + autor + "</li>");
-            }
+                out.println ("<li><a href='' style='color: red;'>" + libro.getNombre () + "</a> ISBN: " + libro.getisbn () + "</li>");
+            } 
         }
 
         out.println ("<br>");

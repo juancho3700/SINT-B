@@ -3,9 +3,9 @@ package p2;
 public class Book {
 
     private String nombre, isbn, id, idAutor;
-    private boolean disponible = false;
+    private boolean disponible;
 
-    public Book(String nombre, String id, String idAutor, String isbn) {
+    public Book (String nombre, String id, String idAutor, String isbn) {
 
         this.nombre = nombre;
         this.id = id;
@@ -13,44 +13,44 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public void setDisponible(String disponible) {
+    public void setDisponible (String disponible) {
 
-        if (disponible.equals("yes")) {
+        if (disponible.toLowerCase ().equals ("yes")) {
 
             this.disponible = true;
 
-        } else if (disponible.equals("no")) {
+        } else if (disponible.toLowerCase ().equals ("no")) {
 
             this.disponible = false;
         }
     }
 
-    public String getNombre() {
+    public String getNombre () {
 
         return nombre;
     }
 
-    public boolean getDisponible() {
+    public boolean getDisponible () {
 
         return disponible;
     }
 
-    public String getId() {
+    public String getId () {
 
         return id;
     }
 
-    public String getIdAutor() {
+    public String getIdAutor () {
 
         return idAutor;
     }
 
-    public String getisbn() {
+    public String getisbn () {
 
         return isbn;
     }
 
-    public String toString() {
+    public String toString () {
 
         return "ISBN: " + isbn;
     }

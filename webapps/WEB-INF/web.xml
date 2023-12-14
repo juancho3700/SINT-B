@@ -17,5 +17,4 @@
            <servlet-name> Sint62P2 </servlet-name>
            <url-pattern> /P2Lib/* </url-pattern>   
      </servlet-mapping>
-
 </web-app>

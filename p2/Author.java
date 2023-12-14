@@ -1,39 +1,52 @@
 package p2;
 
-public class Author {
+public class Author implements Comparable <Author> {
 
-    private String id, idPais, nombre, fechaNacimiento;
+    private String identificador, pais, nombre, nacimiento;
 
-    public Author (String nombre, String id, String fechaNacimiento, String idPais) {
+    public Author (String nombre, String identificador, String nacimiento, String pais) {
 
         this.nombre = nombre;
-        this.id = id;
-        this.fechaNacimiento = fechaNacimiento;
-        this.idPais = idPais;
+        this.identificador = identificador;
+        this.nacimiento = nacimiento;
+        this.pais = pais;
     }
+
 
     public String getNombre () {
 
         return nombre;
     }
 
-    public String getId () {
 
-        return id;
+    public String getIdentificador () {
+
+        return identificador;
     }
 
-    public String getFechaNacimiento () {
 
-        return fechaNacimiento;
+    public String getNacimiento () {
+
+        return nacimiento;
     }
 
-    public String getIdPais () {
 
-        return idPais;
+    public String getPais () {
+
+        return pais;
     }
+    
 
-    public String toString () {
+    @Override
+    public int compareTo (Author autor) {
 
-        return "Nacido en " + fechaNacimiento;
+        if (autor.getIdentificador ().compareTo (this.identificador) > 0) {
+
+            return -1;
+
+        } else {
+
+            return 1;
+        }
     }
 }

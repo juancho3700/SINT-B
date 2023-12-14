@@ -1,7 +1,6 @@
 package p2;
 
-import java.io.FileInputStream;
-import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -47,7 +46,7 @@ public class DataModel {
 
         String nombre, id, fechaNacimiento, idPais, isbn, disponible;
 
-        doc = db.parse (new InputSource (new FileInputStream (new File (xmlDoc))));
+        doc = db.parse (new InputSource (new URL (xmlDoc).openStream ()));
         doc.getDocumentElement ().normalize ();
 
         nlDoc = doc.getElementsByTagName ("pais");
@@ -95,22 +94,25 @@ public class DataModel {
 
             } catch (Exception e) {
 
-                libros.get (libros.size () - 1).setDisponible ("No");
+                libros.get (libros.size () - 1).setDisponible ("");
 
             }
         }
-
-        System.out.println("\n\n\n");
     }
 
 
     public ArrayList <Author> getAuthors (String countryId) {
 
+        if (countryId == null) {
+
+            return autores;
+        }
+
         ArrayList <Author> autoresPais = new ArrayList <Author> ();
 
         for (Author autor : autores) {
 
-            if (autor.getIdPais ().equals (countryId)) {
+            if (autor.getPais ().equals (countryId)) {
 
                 autoresPais.add (autor);
             }
@@ -122,11 +124,16 @@ public class DataModel {
 
     public ArrayList <Book> getBooks (String authorId) {
 
+        if (authorId == null) {
+
+            return libros;
+        }
+
         ArrayList <Book> librosAutor = new ArrayList <Book> ();
 
         for (Book libro : libros) {
 
-            if (libro.getIdAutor ().equals (authorId)) {
+            if (libro.getAutor ().equals (authorId)) {
 
                 librosAutor.add (libro);
             }
@@ -146,13 +153,13 @@ public class DataModel {
 
         for (Author autor : autores) {
 
-            if (autor.getId ().equals (authorId)) {
+            if (autor.getIdentificador ().equals (authorId)) {
 
                 return autor;
             }
         }
 
-        return (new Author ("", "", "", ""));
+        return null;
     }
 
 
@@ -160,13 +167,13 @@ public class DataModel {
 
         for (Country pais : paises) {
 
-            if (pais.getId ().equals (countryId)) {
+            if (pais.getIdentificador ().equals (countryId)) {
 
                 return pais;
             }
         }
 
-        return (new Country ("", ""));
+        return null;
     }
 
     
@@ -174,13 +181,13 @@ public class DataModel {
 
         for (Book libro : libros) {
 
-            if (libro.getId ().equals (bookId)) {
+            if (libro.getIdentificador ().equals (bookId)) {
 
                 return libro;
             }
         }
 
-        return (new Book ("", "", "", ""));
+        return null;
     }
 
 
@@ -190,21 +197,21 @@ public class DataModel {
 
         for (Country pais : paises) {
 
-            System.out.println (pais.getNombre () + " - " + pais.getId ());
+            System.out.println (pais.getNombre () + " - " + pais.getIdentificador ());
         }
 
         System.out.println ("\n\n----- AUTORES -----");
 
         for (Author autor : autores) {
 
-            System.out.println (autor.getNombre () + " (" + autor.getId () + "): Nacido en " + autor.getFechaNacimiento () + ", " + autor.getIdPais ());
+            System.out.println (autor.getNombre () + " (" + autor.getIdentificador () + "): Nacido en " + autor.getNacimiento () + ", " + autor.getPais ());
         }
 
         System.out.println ("\n\n----- LIBROS -----");
 
         for (Book libro : libros) {
 
-            System.out.println (libro.getNombre () + " (" + libro.getId () + "): Escrito por " + libro.getIdAutor () + ", " + libro.getisbn ());
+            System.out.println (libro.getTitulo () + " (" + libro.getIdentificador () + "): Escrito por " + libro.getAutor () + ", " + libro.getISBN ());
         }
     }
 }

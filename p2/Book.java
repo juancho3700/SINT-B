@@ -1,57 +1,70 @@
 package p2;
 
-public class Book {
+public class Book implements Comparable <Book> {
 
-    private String nombre, isbn, id, idAutor;
-    private boolean disponible;
+    private String titulo, isbn, identificador, autor, disponible;
 
-    public Book (String nombre, String id, String idAutor, String isbn) {
+    public Book (String titulo, String identificador, String autor, String isbn) {
 
-        this.nombre = nombre;
-        this.id = id;
-        this.idAutor = idAutor;
+        this.titulo = titulo;
+        this.identificador = identificador;
+        this.autor = autor;
         this.isbn = isbn;
     }
+
 
     public void setDisponible (String disponible) {
 
         if (disponible.toLowerCase ().equals ("yes")) {
 
-            this.disponible = true;
+            this.disponible = "yes";
+            return;
+        } 
 
-        } else if (disponible.toLowerCase ().equals ("no")) {
-
-            this.disponible = false;
-        }
+        this.disponible = "no";
     }
 
-    public String getNombre () {
 
-        return nombre;
+    public String getTitulo () {
+
+        return titulo;
     }
 
-    public boolean getDisponible () {
+
+    public String getDisponible () {
 
         return disponible;
     }
 
-    public String getId () {
 
-        return id;
+    public String getIdentificador () {
+
+        return identificador;
     }
 
-    public String getIdAutor () {
 
-        return idAutor;
+    public String getAutor () {
+
+        return autor;
     }
 
-    public String getisbn () {
+    
+    public String getISBN () {
 
         return isbn;
     }
 
-    public String toString () {
 
-        return "ISBN: " + isbn;
+    @Override
+    public int compareTo (Book libro) {
+
+        if (libro.getIdentificador ().compareTo (this.identificador) > 0) {
+
+            return -1;
+
+        } else {
+
+            return 1;
+        }
     }
 }

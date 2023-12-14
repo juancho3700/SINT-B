@@ -49,7 +49,7 @@ public class FrontEnd {
 
         for (Country pais : paises) {
 
-            out.println ("<li><a href='?fase=2&pais=" + pais.getId () + "''>" + pais.getNombre () + "</a></li>");
+            out.println ("<li><a href='?fase=2&pais=" + pais.getIdentificador () + "''>" + pais.getNombre () + "</a></li>");
         }
 
         out.println ("<br>");
@@ -79,7 +79,7 @@ public class FrontEnd {
 
         for (Author autor : autores) {
 
-            out.println ("<li><a href='?fase=3&autor=" + autor.getId () + "'>" + autor.getNombre () + "</a> Nacido en " + autor.getFechaNacimiento () + "</li>");
+            out.println ("<li><a href='?fase=3&autor=" + autor.getIdentificador () + "'>" + autor.getNombre () + "</a> Nacido en " + autor.getNacimiento () + "</li>");
         }
 
         out.println ("<br>");
@@ -111,18 +111,18 @@ public class FrontEnd {
         for (Book libro : libros) {
 
             
-            if (libro.getDisponible ()) {
+            if (libro.getDisponible ().equals ("no")) {
                 
-                out.println ("<li><a href='' style='color: blue;'>" + libro.getNombre () + "</a> ISBN: " + libro.getisbn () + "</li>");
+                out.println ("<li><a href='' style='color: red;'>" + libro.getTitulo () + "</a> ISBN: " + libro.getISBN () + "</li>");
 
             } else {
 
-                out.println ("<li><a href='' style='color: red;'>" + libro.getNombre () + "</a> ISBN: " + libro.getisbn () + "</li>");
+                out.println ("<li><a href='' style='color: blue;'>" + libro.getTitulo () + "</a> ISBN: " + libro.getISBN () + "</li>");
             } 
         }
 
         out.println ("<br>");
-        out.println ("<a href='?fase=2&pais=" + pais.getId () + "'><input type=\"button\" value=\"Anterior\"></a>");
+        out.println ("<a href='?fase=2&pais=" + pais.getIdentificador () + "'><input type=\"button\" value=\"Anterior\"></a>");
  
         out.println ("<br>");
         out.println ("<div class = 'izquierda' id = 'pie_pagina'> Juan Anselmo López Gómez </div>");

@@ -1,13 +1,13 @@
 package p2;
 
-public class Country {
+public class Country implements Comparable <Country> {
 
-    private String nombre, id;
+    private String nombre, identificador;
 
-    public Country (String nombre, String id) {
+    public Country (String nombre, String identificador) {
 
         this.nombre = nombre;
-        this.id = id;
+        this.identificador = identificador;
     }
 
     public String getNombre () {
@@ -15,8 +15,22 @@ public class Country {
         return nombre;
     }
 
-    public String getId () {
+    public String getIdentificador () {
 
-        return id;
+        return identificador;
+    }
+
+
+    @Override
+    public int compareTo (Country pais) {
+
+        if (pais.getIdentificador ().compareTo (this.identificador) > 0) {
+
+            return -1;
+
+        } else {
+
+            return 1;
+        }
     }
 }

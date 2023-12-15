@@ -81,7 +81,7 @@ public class Sint62P2 extends HttpServlet {
                 case 3:
                 
                     Author autor = dataModel.getAuthor (req.getParameter ("autor"));
-                    frontend.fase3 (printWriter, dataModel.getCountry (autor.getPais ()), autor, dataModel.getBooks (autor.getIdentificador ()));
+                    frontend.fase3 (printWriter, req.getContextPath() + "static/style.css", dataModel.getCountry (autor.getPais ()), autor, dataModel.getBooks (autor.getIdentificador ()));
                     return;
             }
 

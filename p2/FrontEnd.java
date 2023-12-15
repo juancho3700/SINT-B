@@ -5,8 +5,9 @@ import java.io.PrintWriter;
 
 public class FrontEnd {
 
+    
     public void fase0 (PrintWriter out, String xmlDocument, String ipClient, String browser, String ipServer) throws Exception {
-
+        
         out.println ("<html>");
         out.println ("<head>");
         out.println ("<meta charset = 'UTF-8'/>");
@@ -92,11 +93,12 @@ public class FrontEnd {
     }
 
 
-    public void fase3 (PrintWriter out, Country pais, Author autor, ArrayList <Book> libros) throws Exception {
+    public void fase3 (PrintWriter out, String cssLocation, Country pais, Author autor, ArrayList <Book> libros) throws Exception {
 
         out.println ("<html>");
         out.println ("<head>");
         out.println ("<meta charset = 'UTF-8'/>");
+        out.println("<link rel='stylesheet' type='text/css' href=" + cssLocation + ">");
         out.println ("</head>");
  
         out.println ("<body>");
@@ -111,13 +113,13 @@ public class FrontEnd {
         for (Book libro : libros) {
 
             
-            if (libro.getDisponible ().equals ("no")) {
+            if (libro.getDisponible ().equals ("yes")) {
                 
-                out.println ("<li><a href='' style='color: red;'>" + libro.getTitulo () + "</a> ISBN: " + libro.getISBN () + "</li>");
+                out.println ("<li class='disponible'> ISBN: " + libro.getISBN () + "</li>");
 
             } else {
 
-                out.println ("<li><a href='' style='color: blue;'>" + libro.getTitulo () + "</a> ISBN: " + libro.getISBN () + "</li>");
+                out.println ("<li class='no_disponible'> ISBN: " + libro.getISBN () + "</li>");
             } 
         }
 
